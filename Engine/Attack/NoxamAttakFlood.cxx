@@ -5,6 +5,8 @@
 #include "../../Headers/Attack/NoxamAttackFlood.hxx"
 #include "../../Headers/Net/NoxamSocket.hxx"
 
+using namespace std;
+
 /*
 |===========================================================
 |    NoxamTCPFlood()

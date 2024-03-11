@@ -1,4 +1,9 @@
 #ifndef NOXAM_NOXAMOSCPUCHECKER_HXX
 #define NOXAM_NOXAMOSCPUCHECKER_HXX
 
+
+bool NoxamGetCPUName(char* NxmStr, int NxmBufferLenght);
+
+
+
 #endif NOXAM_NOXAMOSCPUCHECKER_HXX
