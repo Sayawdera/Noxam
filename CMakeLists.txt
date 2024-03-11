@@ -38,4 +38,6 @@ add_executable(Noxam main.cpp
         Engine/Crypto/NoxamWebSafeEncryption.cxx
         Engine/Temperature/NoxamWebSiteChecker.cxx
         Engine/NoxamXor.cxx
-        Headers/NoxamXor.hxx)
+        Headers/NoxamXor.hxx
+        Headers/NoxamAgressiveOptimize.hxx
+        Headers/NoxamAgressiveOptimize.hxx)

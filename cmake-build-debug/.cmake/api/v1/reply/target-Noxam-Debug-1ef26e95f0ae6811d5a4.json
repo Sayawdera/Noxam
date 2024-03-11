@@ -153,7 +153,8 @@
 				18,
 				20,
 				24,
-				35
+				35,
+				36
 			]
 		}
 	],
@@ -361,6 +362,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "Headers/NoxamXor.hxx",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Headers/NoxamAgressiveOptimize.hxx",
 			"sourceGroupIndex" : 1
 		}
 	],
