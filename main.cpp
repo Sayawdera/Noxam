@@ -32,34 +32,298 @@
 using namespace std;
 
 
-void NoxamRunEvents();
-int NoxamGetEventsIndex(NoxamPostPollDelegate Nproc);
-bool NoxamAddEvent(NoxamPostPollDelegate Nproc);
-bool NoxamRemoveEvent(NoxamPostPollDelegate Nproc);
-void NoxamKeyLogFlushEvent();
-void NoxamKeyLogParser(int NxmCommand, int NxmCommandType, char* NxmData);
-void NoxamRemoteProccessParser(int NxmCommandID, int NxmCommandType, char* NxmData);
-
-DWORD __stdcall NoxamTCPThreadStart(PVOID NxmData);
-
-void NoxamTCOFloodParser(int NxmCommandID, int NxmCommandType, char* NxmData);
-void NoxamRemoteProccessNoResultParser(int NxmCommandID, int NxmCommandType, char* NxmData);
-void NoxamJoinParser(int NxmCommandID, int NxmCommandType, char* NxmData);
-void NoxamPollParser(int NxmCommandID, int NxmCommandType, char* NxmData);
-void NoxamSiteCheckerParser(int NxmCommandID, int NxmCommandType, char* NxmData);
-void NoxamDownloadAndUpdate(int NxmCommandID, int NxmCommandType, char* NxmData);
-void NoxamDownloadExecuParser(int NxmCommandID, int NxmCommandType, char* NxmData);
-void NoxamMessageBoxParser(int NxmCommandID, int NxmCommandType, char* NxmData);
-void NoxamScreenShotParser(int NxmCommandID, int NxmCommandType, char* NxmData);
-void NoxamInitializeParser();
-char* NoxamGetInitializeJoinCommand();
-void NoxamInitializePollThread();
-int WINAPI NoxamWinMain(HINSTANCE NxmIn, HINSTANCE NxmPrev, LPSTR NxmCmd, int NxmShow);
 
 
-
+/*
+|===========================================================
+|    main()
+|===========================================================
+|
+|
+|===========================================================
+*/
 int main()
 {
     std::cout << "Bang Bang" << std::endl;
     return 0;
 }
+
+
+/*
+|===========================================================
+|    NoxamRunEvents()
+|===========================================================
+|
+|
+|===========================================================
+*/
+void NoxamRunEvents()
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamGetEventsIndex()
+|===========================================================
+|
+|
+|===========================================================
+*/
+int NoxamGetEventsIndex(NoxamPostPollDelegate Nproc)
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamAddEvent()
+|===========================================================
+|
+|
+|===========================================================
+*/
+bool NoxamAddEvent(NoxamPostPollDelegate Nproc)
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamRemoveEvent()
+|===========================================================
+|
+|
+|===========================================================
+*/
+bool NoxamRemoveEvent(NoxamPostPollDelegate Nproc)
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamKeyLogFlushEvent()
+|===========================================================
+|
+|
+|===========================================================
+*/
+void NoxamKeyLogFlushEvent()
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamKeyLogParser()
+|===========================================================
+|
+|
+|===========================================================
+*/
+void NoxamKeyLogParser(int NxmCommand, int NxmCommandType, char* NxmData)
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamRemoteProccessParser()
+|===========================================================
+|
+|
+|===========================================================
+*/
+void NoxamRemoteProccessParser(int NxmCommandID, int NxmCommandType, char* NxmData)
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamTCPThreadStart()
+|===========================================================
+|
+|
+|===========================================================
+*/
+DWORD __stdcall NoxamTCPThreadStart(PVOID NxmData)
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamTCOFloodParser()
+|===========================================================
+|
+|
+|===========================================================
+*/
+void NoxamTCOFloodParser(int NxmCommandID, int NxmCommandType, char* NxmData)
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamRemoteProccessNoResultParser()
+|===========================================================
+|
+|
+|===========================================================
+*/
+void NoxamRemoteProccessNoResultParser(int NxmCommandID, int NxmCommandType, char* NxmData)
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamJoinParser()
+|===========================================================
+|
+|
+|===========================================================
+*/
+void NoxamJoinParser(int NxmCommandID, int NxmCommandType, char* NxmData)
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamPollParser()
+|===========================================================
+|
+|
+|===========================================================
+*/
+void NoxamPollParser(int NxmCommandID, int NxmCommandType, char* NxmData)
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamSiteCheckerParser()
+|===========================================================
+|
+|
+|===========================================================
+*/
+void NoxamSiteCheckerParser(int NxmCommandID, int NxmCommandType, char* NxmData)
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamDownloadAndUpdate()
+|===========================================================
+|
+|
+|===========================================================
+*/
+void NoxamDownloadAndUpdate(int NxmCommandID, int NxmCommandType, char* NxmData)
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamDownloadExecuParser()
+|===========================================================
+|
+|
+|===========================================================
+*/
+void NoxamDownloadExecuParser(int NxmCommandID, int NxmCommandType, char* NxmData)
+{
+
+}
+
+
+/*
+|===========================================================
+|    NoxamMessageBoxParser()
+|===========================================================
+|
+|
+|===========================================================
+*/
+void NoxamMessageBoxParser(int NxmCommandID, int NxmCommandType, char* NxmData)
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamScreenShotParser()
+|===========================================================
+|
+|
+|===========================================================
+*/
+void NoxamScreenShotParser(int NxmCommandID, int NxmCommandType, char* NxmData)
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamInitializeParser()
+|===========================================================
+|
+|
+|===========================================================
+*/
+void NoxamInitializeParser()
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamGetInitializeJoinCommand()
+|===========================================================
+|
+|
+|===========================================================
+*/
+char* NoxamGetInitializeJoinCommand()
+{
+
+}
+
+
+/*
+|===========================================================
+|    NoxamInitializePollThread()
+|===========================================================
+|
+|
+|===========================================================
+*/
+void NoxamInitializePollThread()
+{
+
+}
+
+/*
+|===========================================================
+|    NoxamWinMain()
+|===========================================================
+|
+|
+|===========================================================
+*/
+int WINAPI NoxamWinMain(HINSTANCE NxmIn, HINSTANCE NxmPrev, LPSTR NxmCmd, int NxmShow)
+{
+
+}
+
+
+
+
