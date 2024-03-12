@@ -11,3 +11,6 @@ typedef BOOL(WINAPI *NXMPGPI)(NXMDWORD, NXMDWORD, NXMDWORD, NXMDWORD, PNXMDWORD)
 bool NoxamWindowsVersionname(char* NxmStr, int NxmBufferSize);
 
 #endif NOXAM_NOXAMOSVERSIONCHECKER_HXX
+
+
+
