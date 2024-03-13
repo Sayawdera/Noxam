@@ -1,6 +1,6 @@
 #include <windows.h>
 #include "../../Headers/Crypto/NoxamWebSafeEncryption.hxx"
-#include "../../Headers/Crypto/NoxamURLEncoding.hxx.hxx"
+#include "../../Headers/Crypto/NoxamURLEncoding.hxx"
 
 using namespace std;
 
@@ -15,7 +15,12 @@ using namespace std;
 */
 char* NoxamGetEncodedXorResult(char* NxmInput, char* NxmKey, int NxmInputLength, int NxmKeyLength, char** NxmOutputKey)
 {
+    char* NxmXoredInput = NoxamXorInputKey(NxmInput, NxmKey, NxmInputLength, NxmKeyLength);
+    char* NxmEncoded = NoxamURLEncode(NxmXoredInput, NxmInputLength);
+    *NxmOutputKey = NoxamURLEncode(NxmKey, NxmKeyLength);
+    NoxamFreeXorResult(NxmXoredInput);
 
+    return NxmEncoded;
 }
 
 /*
@@ -28,7 +33,15 @@ char* NoxamGetEncodedXorResult(char* NxmInput, char* NxmKey, int NxmInputLength,
 */
 char* NoxamGetDecodedXorResult(char* NxmInput, char* NxmKey, int* NxmOutputLength)
 {
+    int NxmInputLen, NxmKeyLength;
+    char* NxmDecodeKey = NoxamURLDecode(NxmKey, &NxmKeyLength);
+    char* NxmDecodeInput = NoxamURLDecode(NxmInput, &NxmInputLen);
+    char* NxmOutput = NoxamXorInputKey(NxmDecodeInput, NxmDecodeKey, NxmInputLen, NxmKeyLength);
+    NoxamFreeURLDecodeResult(NxmDecodeInput);
+    NoxamFreeURLDecodeResult(NxmDecodeKey);
+    *NxmOutputLength = NxmInputLen;
 
+    return NxmOutput;
 }
 
 
@@ -42,7 +55,8 @@ char* NoxamGetDecodedXorResult(char* NxmInput, char* NxmKey, int* NxmOutputLengt
 */
 void NoxamFreeEncodedXorResult(char* NxmInput, char* NxmKey)
 {
-
+    NoxamFreeURLEncodeResult(NxmInput);
+    NoxamFreeURLEncodeResult(NxmKey);
 }
 
 /*
@@ -55,5 +69,5 @@ void NoxamFreeEncodedXorResult(char* NxmInput, char* NxmKey)
 */
 void NoxamFreeDecodedXorResult(char* NxmInput)
 {
-
+    NoxamFreeXorResult(NxmInput);
 }
