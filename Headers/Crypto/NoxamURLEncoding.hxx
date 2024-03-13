@@ -6,7 +6,7 @@
 static char* NoxamHexTable = "0123456789ABCDEF";
 
 char* NoxamURLEncode(char* NxmInput, int NxmLength);
-char* NoxamURLDecode(char* NxmInput, int NxmOutputLength);
+char* NoxamURLDecode(char* NxmInput, int* NxmOutputLength);
 
 void NoxamFreeURLEncodeResult(char* NxmInput);
 void NoxamFreeURLDecodeResult(char* NxmInput);
