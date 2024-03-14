@@ -34,6 +34,7 @@ char* NoxamGetEncodedXorResult(char* NxmInput, char* NxmKey, int NxmInputLength,
 char* NoxamGetDecodedXorResult(char* NxmInput, char* NxmKey, int* NxmOutputLength)
 {
     int NxmInputLen, NxmKeyLength;
+
     char* NxmDecodeKey = NoxamURLDecode(NxmKey, &NxmKeyLength);
     char* NxmDecodeInput = NoxamURLDecode(NxmInput, &NxmInputLen);
     char* NxmOutput = NoxamXorInputKey(NxmDecodeInput, NxmDecodeKey, NxmInputLen, NxmKeyLength);
