@@ -58,7 +58,23 @@ int NoxamHttQuery(char* NxmHost, char* NxmPath, NxmNameValuePair** NxmHeaders, N
 */
 void NoxamFreeHTTPResponse(NxmNameValuePair** NxmHeaders, char* NxmData)
 {
+    if (NxmData)
+    {
+        free(NxmData);
+    }
+    NxmNameValuePair** NxmHeaderOrig = NxmHeaders;
 
+    while (NxmHeaders && *NxmHeaders)
+    {
+        if ((*NxmHeaders)->NxmName && (*NxmHeaders)->NxmName != NoxamResponseCodeName)
+        {
+            free((void*)(*NxmHeaders)->NxmName);
+        }
+        free((void*)(*NxmHeaders)->NxmValue);
+        free(*NxmHeaders);
+        NxmHeaders++;
+    }
+    free(NxmHeaderOrig);
 }
 
 

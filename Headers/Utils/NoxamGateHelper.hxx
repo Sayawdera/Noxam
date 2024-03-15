@@ -4,6 +4,8 @@
 #include <string>
 
 
+char* NoxamBotID = "-1";
+
 
 char* NoxamGetBotID();
 char* NoxamSendCommandWithDecodeResponse(char* NxmCommand);
