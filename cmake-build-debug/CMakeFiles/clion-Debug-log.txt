@@ -1,4 +1,4 @@
 "E:\SoftGram FIles\Development\Software IDE\JetBrains IDE\CLion\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=E:/SoftGram FIles/Development/Software IDE/JetBrains IDE/CLion/bin/ninja/win/x64/ninja.exe" -G Ninja -S E:\MyProjects\HackToolsTest\BotNets\Noxam -B E:\MyProjects\HackToolsTest\BotNets\Noxam\cmake-build-debug
--- Configuring done (0.2s)
+-- Configuring done (19.8s)
 -- Generating done (0.1s)
 -- Build files have been written to: E:/MyProjects/HackToolsTest/BotNets/Noxam/cmake-build-debug

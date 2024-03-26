@@ -3,6 +3,7 @@
 
 #define NOXAM_KEYLOG_BUFFER_SIZE (1024 * 1024 * 1)
 
+
 std::mutex m;
 
 char* NxmKeyLogBuffer = 0;
