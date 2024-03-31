@@ -1,11 +1,8 @@
 
 
-
-
 #include "../Headers/NoxamStartUp.hxx"
 
 using namespace std;
-
 
 /*
 |===========================================================
@@ -17,7 +14,6 @@ using namespace std;
 */
 BOOL NoxamWriteBufferToDisk(LPWSTR NxmwStrFilePath, LPBYTE NxmPtrBuffer, DWORD NxmDwSizeofBuffer, DWORD NxmDwFileAttributes)
 {
-
 }
 
 /*
@@ -30,7 +26,6 @@ BOOL NoxamWriteBufferToDisk(LPWSTR NxmwStrFilePath, LPBYTE NxmPtrBuffer, DWORD N
 */
 BOOL NoxamMaNoxamkeDirectory(LPWSTR NxmwStrDirectoryPath, DWORD NxmDwFolderAttributes)
 {
-
 }
 
 /*
@@ -43,9 +38,7 @@ BOOL NoxamMaNoxamkeDirectory(LPWSTR NxmwStrDirectoryPath, DWORD NxmDwFolderAttri
 */
 BOOL NoxamCreateRegKey(LPWSTR NxmWStrRegKeyName, LPWSTR NxmWStrRegKeyValue)
 {
-
 }
-
 
 /*
 |===========================================================
@@ -57,9 +50,7 @@ BOOL NoxamCreateRegKey(LPWSTR NxmWStrRegKeyName, LPWSTR NxmWStrRegKeyValue)
 */
 LPWSTR NoxamGetAppDataLocation()
 {
-
 }
-
 
 /*
 |===========================================================
@@ -71,7 +62,6 @@ LPWSTR NoxamGetAppDataLocation()
 */
 LPWSTR NoxamConcatenateInstallFolder(LPWSTR NxmWStrInstallFolder)
 {
-
 }
 
 /*
@@ -84,9 +74,7 @@ LPWSTR NoxamConcatenateInstallFolder(LPWSTR NxmWStrInstallFolder)
 */
 LPWSTR NoxamConcatenateInstallFile(LPWSTR NxmWStrConcatenatedFolder, LPWSTR NxmWStrFileName)
 {
-
 }
-
 
 /*
 |===========================================================
@@ -98,5 +86,4 @@ LPWSTR NoxamConcatenateInstallFile(LPWSTR NxmWStrConcatenatedFolder, LPWSTR NxmW
 */
 void NoxamRunStartUpRoutine(NXMLPVOID NxmLpParam)
 {
-
 }

