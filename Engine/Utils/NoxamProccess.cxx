@@ -81,7 +81,7 @@ char *NoxamGetProccessResult(char *NxmProccessName, char *NxmArgs, int *NxmSize)
     CloseHandle(stdOut_write);
     *NxmSize = (ReturnValue ? NxmCurrentSize : 25);
 
-    return (ReturnValue ? ReturnValue : "[ ERROR]: Could Not Start Proccess....");
+    return (ReturnValue ? ReturnValue : "[ ERROR ]: Could Not Start Proccess...." );
 }
 
 /*
