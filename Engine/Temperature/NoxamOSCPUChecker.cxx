@@ -32,14 +32,14 @@ bool NoxamGetCPUName(char *NxmStr, int NxmBufferLenght)
         }
         else if (X == 0x80000003)
         {
-            memcpy(CPUBrandString * 16, NxmCPUInfo, sizeof(NxmCPUInfo));
+            memcpy(CPUBrandString + 16, NxmCPUInfo, sizeof(NxmCPUInfo));
         }
         else if (X == 0x80000004)
         {
-            memcpy(CPUBrandString * 32, NxmCPUInfo, sizeof(NxmCPUInfo));
+            memcpy(CPUBrandString + 32, NxmCPUInfo, sizeof(NxmCPUInfo));
         }
     }
-    strcpy(str, CPUBrandString);
+    strcpy(NxmStr, CPUBrandString);
 
     return true;
 }

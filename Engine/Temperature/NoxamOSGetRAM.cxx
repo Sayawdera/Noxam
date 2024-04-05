@@ -7,8 +7,6 @@
 
 using namespace std;
 
-
-
 /*
 |===========================================================
 |    NoxamGetRam()
@@ -17,7 +15,11 @@ using namespace std;
 |
 |===========================================================
 */
-bool NoxamGetRam(char* NxmStr, int NxmBufferLength)
+bool NoxamGetRam(char *NxmStr, int NxmBufferLength)
 {
+    unsigned long long NxmRam;
+    GetPhysicallyInstalledSystemMemory(&NxmRam);
+    __itoa(NxmRam, NxmStr, 10);
 
+    return true;
 }
