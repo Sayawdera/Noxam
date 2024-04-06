@@ -70,4 +70,43 @@ bool NoxamGetGPUName(char *NxmStr, int NxmBufferLength)
         CoUninitialize();
         return 0;
     }
+    IWbemClassObject *PCiSObJ = (IWbemClassObject *)malloc(sizeof(IWbemClassObject));
+    ULONG URtRn;
+    bool PSD = false;
+
+    while (PEnumErator)
+    {
+        HRESULT HR = PEnumErator->Next(WBEM_INFINITE, 1, &PCiSObJ, &URtRn);
+
+        if (0 == URtRn)
+        {
+            break;
+        }
+        VARIANT VtProp;
+        HR = PCiSObJ->Get(L"Caption", 0, &VtProp, 0, 0);
+        std::wstring wGpuName = VtProp.bstrVal;
+        int size_needed = WideCharToMultiByte(CP_UTF8, 0, &wGpuName[0], (int)wGpuName.size(), NULL, 0, NULL, NULL);
+        std::string strTo(size_needed, 0);
+        WideCharToMultiByte(CP_UTF8, 0, &wGpuName[0], (int)wGpuName.size(), &strTo[0], size_needed, NULL, NULL);
+
+        if (!PSD)
+        {
+            strcpy(NxmStr, strTo.c_str());
+        }
+        else
+        {
+            strcpy(NxmStr + size_needed, strTo.c_str());
+        }
+        PSD = TRUE;
+        VariantClear(&VtProp);
+    }
+    PSvC->Release();
+    PLoC->Release();
+    PEnumErator->Release();
+    PCiSObJ->Release();
+    CoUninitialize();
+
+    // free(PCiSObJ);
+
+    return 0;
 }
