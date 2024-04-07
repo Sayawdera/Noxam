@@ -6,7 +6,8 @@
 
 #pragma comment(lib, "Advapi32.lib");
 
-bool NoxamQUeryKey(char* NxmStr, int NxmBufferLength);
+bool NoxamQUeryKey(HKEY HKeY, char *NetVer);
 
+bool NoxamGetLastestNetInstalled(char *NxmStr, int NxmBufferLength);
 
 #endif NOXAM_NOXAMOSNETVERSIONCHECKER_HXX
