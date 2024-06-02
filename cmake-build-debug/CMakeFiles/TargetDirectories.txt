@@ -1,3 +1,0 @@
-E:/MyProjects/HackToolsTest/BotNets/Noxam/cmake-build-debug/CMakeFiles/Noxam.dir
-E:/MyProjects/HackToolsTest/BotNets/Noxam/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/MyProjects/HackToolsTest/BotNets/Noxam/cmake-build-debug/CMakeFiles/rebuild_cache.dir

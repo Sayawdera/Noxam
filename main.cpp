@@ -6,7 +6,7 @@
 #Include <WinBase.h>
 
 #include "Headers/Net/NoxamHTTP.hxx"
-#include "Headers/NoxamAgressiveOptimize.hxx"
+#include "Engine/NoxamAgressiveOptimize.hxx"
 #include "Headers/Utils/NoxamGate.hxx"
 #include "Headers/Net/NoxamNetINIT.hxx"
 #include "Headers/Crypto/NoxamWebSafeEncryption.hxx"
@@ -27,7 +27,7 @@
 #include "Headers/Utils/NoxamProccess.hxx"
 #include "Headers/Utils/NoxamDownloadExecute.hxx"
 #include "Headers/Utils/NoxamScreenshot.hxx"
-#include "Headers/NoxamStartUp.hxx"
+#include "Engine/NoxamStartUp.hxx"
 
 using namespace std;
 
